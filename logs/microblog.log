@@ -1,4 +1,4 @@
-2018-11-29 10:28:29,320 ERROR: Exception on /explore [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-12-03 08:49:34,945 ERROR: Exception on /user/susan [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,99 +14,109 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 130, in explore
-    page, app.config['POSTS_PER_PAGE'], False)
-KeyError: 'POSTS_PER_PAGE'
-2018-11-29 10:28:30,844 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/home/aaron/microblog/app/routes.py", line 81, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/aaron/microblog/app/templates/base.html", line 50, in template
+    {% block app_content %}{% endblock %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/aaron/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/aaron/microblog/app/templates/base.html", line 50, in template
+    {% block app_content %}{% endblock %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 543, in _generate
+    optimized=self.optimized)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 82, in generate
+    generator.visit(node)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 718, in visit_Template
+    self.fail('block %r defined twice' % block.name, block.lineno)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 315, in fail
+    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
+2018-12-03 08:49:35,050 ERROR: Exception on /favicon.ico [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/aaron/microblog/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 22, in index
-    page, app.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
-2018-11-29 10:29:18,211 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
-2018-11-29 10:29:22,416 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
-2018-11-29 10:29:26,587 ERROR: Exception on /explore [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/aaron/microblog/app/templates/base.html", line 50, in template
+    {% block app_content %}{% endblock %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/aaron/microblog/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 131, in explore
-    page, app.config['POSTS_PER_PAGE'], False)
-KeyError: 'POSTS_PER_PAGE'
-2018-11-29 10:29:28,304 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 23, in index
-    page, app.config['POSTS_PER_PAGE'], False)
-KeyError: 'POSTS_PER_PAGE'
-2018-11-29 10:29:29,505 ERROR: Exception on /explore [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 131, in explore
-    page, app.config['POSTS_PER_PAGE'], False)
-KeyError: 'POSTS_PER_PAGE'
-2018-11-29 10:30:21,553 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
-2018-11-29 10:33:20,658 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
-2018-11-29 10:41:21,543 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
-2018-11-29 11:03:48,000 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:24:44,171 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:26:55,763 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:28:30,137 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:30:09,587 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:33:08,259 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:35:32,701 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:37:23,622 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:39:55,960 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:41:30,571 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:47:40,398 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
-2018-11-29 11:50:28,890 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/aaron/microblog/app/templates/base.html", line 50, in template
+    {% block app_content %}{% endblock %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 543, in _generate
+    optimized=self.optimized)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 82, in generate
+    generator.visit(node)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 718, in visit_Template
+    self.fail('block %r defined twice' % block.name, block.lineno)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 315, in fail
+    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
+2018-12-03 08:55:06,530 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-03 09:13:30,552 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-03 09:19:01,698 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-03 09:24:29,944 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-03 09:27:19,378 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-03 09:32:01,372 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-03 09:33:58,616 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]

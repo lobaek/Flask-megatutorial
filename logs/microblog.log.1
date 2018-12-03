@@ -1,4 +1,4 @@
-2018-11-29 10:25:41,730 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-11-29 10:28:29,320 ERROR: Exception on /explore [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,10 +14,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 24, in index
+  File "/home/aaron/microblog/app/routes.py", line 130, in explore
     page, app.config['POSTS_PER_PAGE'], False)
 KeyError: 'POSTS_PER_PAGE'
-2018-11-29 10:26:16,923 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-11-29 10:28:30,844 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -33,11 +33,31 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 24, in index
+  File "/home/aaron/microblog/app/routes.py", line 22, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+NameError: name 'page' is not defined
+2018-11-29 10:29:18,211 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
+2018-11-29 10:29:22,416 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
+2018-11-29 10:29:26,587 ERROR: Exception on /explore [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/aaron/microblog/app/routes.py", line 131, in explore
     page, app.config['POSTS_PER_PAGE'], False)
 KeyError: 'POSTS_PER_PAGE'
-2018-11-29 10:26:25,171 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
-2018-11-29 10:26:32,879 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-11-29 10:29:28,304 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -53,11 +73,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 24, in index
+  File "/home/aaron/microblog/app/routes.py", line 23, in index
     page, app.config['POSTS_PER_PAGE'], False)
 KeyError: 'POSTS_PER_PAGE'
-2018-11-29 10:27:03,992 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
-2018-11-29 10:27:09,014 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-11-29 10:29:29,505 ERROR: Exception on /explore [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,63 +92,23 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 22, in index
+  File "/home/aaron/microblog/app/routes.py", line 131, in explore
     page, app.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
-2018-11-29 10:27:11,980 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 22, in index
-    page, app.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
-2018-11-29 10:27:13,202 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 22, in index
-    page, app.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
-2018-11-29 10:27:19,315 ERROR: Exception on /index [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 22, in index
-    page, app.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
+KeyError: 'POSTS_PER_PAGE'
+2018-11-29 10:30:21,553 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
+2018-11-29 10:33:20,658 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
+2018-11-29 10:41:21,543 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:40]
+2018-11-29 11:03:48,000 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:24:44,171 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:26:55,763 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:28:30,137 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:30:09,587 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:33:08,259 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:35:32,701 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:37:23,622 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:39:55,960 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:41:30,571 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:47:40,398 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-11-29 11:50:28,890 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:42]
+2018-12-03 08:43:55,440 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-03 08:49:32,143 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
