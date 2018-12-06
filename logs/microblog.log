@@ -120,3 +120,5 @@ jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
 2018-12-03 09:27:19,378 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
 2018-12-03 09:32:01,372 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
 2018-12-03 09:33:58,616 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-06 09:13:53,179 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
+2018-12-06 09:35:22,993 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:46]
