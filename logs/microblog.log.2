@@ -1,4 +1,4 @@
-2018-12-06 13:25:24,799 ERROR: Exception on / [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2019-01-04 16:48:23,769 ERROR: Exception on /auth/login [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +12,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 41, in index
-    prev_url=prev_url)
+  File "/home/aaron/microblog/app/auth/routes.py", line 29, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
@@ -28,7 +26,7 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/aaron/microblog/app/templates/index.html", line 2, in top-level template code
+  File "/home/aaron/microblog/app/templates/auth/login.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "/home/aaron/microblog/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -40,46 +38,25 @@ Traceback (most recent call last):
     {% block body -%}
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
     {% block navbar %}
-  File "/home/aaron/microblog/app/templates/base.html", line 23, in block "navbar"
-    <li><a href="{{ url_for('about') }}">{{ _('About') }}</a></li>
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
-    force_external=external)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'about'. Did you mean 'logout' instead?
-2018-12-06 13:25:24,872 ERROR: Exception on /favicon.ico [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
-    raise request.routing_exception
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/aaron/microblog/app/templates/base.html", line 28, in block "navbar"
+    {% set new_messages = current_user.new_messages() %}
+jinja2.exceptions.UndefinedError: 'flask_login.mixins.AnonymousUserMixin object' has no attribute 'new_messages'
+2019-01-04 16:48:26,846 ERROR: Exception on /auth/login [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
-    return handler(e)
-  File "/home/aaron/microblog/app/errors.py", line 6, in not_found_error
-    return render_template('404.html'), 404
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aaron/microblog/app/auth/routes.py", line 29, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
@@ -92,8 +69,8 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/aaron/microblog/app/templates/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
+  File "/home/aaron/microblog/app/templates/auth/login.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
   File "/home/aaron/microblog/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
@@ -104,17 +81,52 @@ Traceback (most recent call last):
     {% block body -%}
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
     {% block navbar %}
-  File "/home/aaron/microblog/app/templates/base.html", line 23, in block "navbar"
-    <li><a href="{{ url_for('about') }}">{{ _('About') }}</a></li>
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+  File "/home/aaron/microblog/app/templates/base.html", line 28, in block "navbar"
+    {% set new_messages = current_user.new_messages() %}
+jinja2.exceptions.UndefinedError: 'flask_login.mixins.AnonymousUserMixin object' has no attribute 'new_messages'
+2019-01-04 16:48:33,964 ERROR: Exception on /auth/login [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
-    force_external=external)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'about'. Did you mean 'logout' instead?
-2018-12-06 13:27:15,044 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aaron/microblog/app/auth/routes.py", line 29, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/aaron/microblog/app/templates/auth/login.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/aaron/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/aaron/microblog/app/templates/base.html", line 28, in block "navbar"
+    {% set new_messages = current_user.new_messages() %}
+jinja2.exceptions.UndefinedError: 'flask_login.mixins.AnonymousUserMixin object' has no attribute 'new_messages'
+2019-01-04 16:49:29,810 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-04 16:52:52,726 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-04 16:54:16,807 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]

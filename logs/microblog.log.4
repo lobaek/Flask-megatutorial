@@ -1,4 +1,4 @@
-2018-12-03 08:49:34,945 ERROR: Exception on /user/susan [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-12-06 13:29:25,565 ERROR: Exception on / [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/routes.py", line 81, in user
-    next_url=next_url, prev_url=prev_url)
+  File "/home/aaron/microblog/app/routes.py", line 41, in index
+    prev_url=prev_url)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
@@ -28,30 +28,32 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/aaron/microblog/app/templates/base.html", line 50, in template
-    {% block app_content %}{% endblock %}
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "/home/aaron/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/home/aaron/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/aaron/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/aaron/microblog/app/templates/base.html", line 23, in block "navbar"
+    <li><a href="{{ url_for('about') }}">{{ _('About') }}</a></li>
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
     reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/aaron/microblog/app/templates/base.html", line 50, in template
-    {% block app_content %}{% endblock %}
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 543, in _generate
-    optimized=self.optimized)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 82, in generate
-    generator.visit(node)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 718, in visit_Template
-    self.fail('block %r defined twice' % block.name, block.lineno)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 315, in fail
-    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
-2018-12-03 08:49:35,050 ERROR: Exception on /favicon.ico [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'about'. Did you mean 'logout' instead?
+2018-12-06 13:29:25,655 ERROR: Exception on /favicon.ico [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -90,37 +92,44 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/aaron/microblog/app/templates/base.html", line 50, in template
-    {% block app_content %}{% endblock %}
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
   File "/home/aaron/microblog/app/templates/404.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/home/aaron/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/aaron/microblog/app/templates/base.html", line 23, in block "navbar"
+    <li><a href="{{ url_for('about') }}">{{ _('About') }}</a></li>
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
     reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/aaron/microblog/app/templates/base.html", line 50, in template
-    {% block app_content %}{% endblock %}
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 543, in _generate
-    optimized=self.optimized)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 82, in generate
-    generator.visit(node)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 718, in visit_Template
-    self.fail('block %r defined twice' % block.name, block.lineno)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/compiler.py", line 315, in fail
-    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
-2018-12-03 08:55:06,530 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
-2018-12-03 09:13:30,552 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
-2018-12-03 09:19:01,698 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
-2018-12-03 09:24:29,944 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
-2018-12-03 09:27:19,378 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
-2018-12-03 09:32:01,372 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
-2018-12-03 09:33:58,616 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
-2018-12-06 09:13:53,179 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:44]
-2018-12-06 09:35:22,993 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:46]
-2018-12-06 10:47:47,442 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:46]
-2018-12-06 13:25:14,679 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'about'. Did you mean 'logout' instead?
+2018-12-06 13:31:27,729 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-06 13:44:30,082 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-06 13:44:52,333 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-06 13:46:40,749 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-06 13:46:48,689 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-07 10:19:13,758 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-07 10:24:34,790 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-07 10:25:23,384 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-07 10:25:32,526 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-07 10:59:48,107 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-07 11:05:05,762 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-07 11:28:22,628 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2018-12-07 11:33:37,978 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:49]
+2019-01-02 15:16:10,401 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-02 16:27:14,785 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-04 09:38:16,453 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
