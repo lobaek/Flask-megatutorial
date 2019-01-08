@@ -18,3 +18,4 @@ Traceback (most recent call last):
     user.add_notification('unread_message_count', user.new_messages())
 AttributeError: 'User' object has no attribute 'add_notification'
 2019-01-08 14:51:53,522 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 16:29:01,390 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
