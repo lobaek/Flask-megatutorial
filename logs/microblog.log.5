@@ -1,4 +1,4 @@
-2019-01-04 16:54:19,688 ERROR: Exception on /messages [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2019-01-04 16:55:18,688 ERROR: Exception on /messages [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -28,8 +28,8 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/aaron/microblog/app/templates/base.html", line 19, in template
-    {% else %}	                    {% else %}
+  File "/home/aaron/microblog/app/templates/base.html", line 48, in template
+    {% endblock %}
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
     return concat(self.root_render_func(self.new_context(vars)))
   File "/home/aaron/microblog/app/templates/messages.html", line 1, in top-level template code
@@ -38,8 +38,8 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/aaron/microblog/app/templates/base.html", line 19, in template
-    {% else %}	                    {% else %}
+  File "/home/aaron/microblog/app/templates/base.html", line 48, in template
+    {% endblock %}
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
     return Parser(self, source, name, encode_filename(filename)).parse()
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
@@ -70,5 +70,11 @@ Traceback (most recent call last):
     self.fail(' '.join(message), lineno)
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'else'. Jinja was looking for the following tags: 'endif'. The innermost block that needs to be closed is 'if'.
-2019-01-04 16:55:15,389 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endif'. The innermost block that needs to be closed is 'if'.
+2019-01-04 16:57:02,933 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 14:01:36,610 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 14:07:19,623 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 14:10:00,347 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 14:17:37,716 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 14:17:44,249 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 14:31:22,729 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]

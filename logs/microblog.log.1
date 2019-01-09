@@ -1,122 +1,4 @@
-2019-01-08 14:40:13,938 ERROR: Exception on /notifications [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/main/routes.py", line 173, in notifications
-    return jsonify([{
-NameError: name 'jsonify' is not defined
-2019-01-08 14:40:22,781 ERROR: Exception on /messages [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/main/routes.py", line 153, in messages
-    current_user.add_notification('undread_message_count', 0)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'User' object has no attribute 'add_notification'
-2019-01-08 14:40:22,797 ERROR: Exception on /notifications [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/main/routes.py", line 173, in notifications
-    return jsonify([{
-NameError: name 'jsonify' is not defined
-2019-01-08 14:40:25,588 ERROR: Exception on /notifications [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/main/routes.py", line 173, in notifications
-    return jsonify([{
-NameError: name 'jsonify' is not defined
-2019-01-08 14:42:17,155 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
-2019-01-08 14:42:30,512 ERROR: Exception on /send_message/susan [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/main/routes.py", line 141, in send_message
-    user.add_notification('unread_message_count', user.new_messages())
-AttributeError: 'User' object has no attribute 'add_notification'
-2019-01-08 14:42:43,716 ERROR: Exception on /send_message/susan [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/main/routes.py", line 141, in send_message
-    user.add_notification('unread_message_count', user.new_messages())
-AttributeError: 'User' object has no attribute 'add_notification'
-2019-01-08 14:45:43,791 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
-2019-01-08 14:45:58,236 ERROR: Exception on /send_message/susan [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2019-01-08 14:49:06,925 ERROR: Exception on /send_message/susan [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -135,4 +17,109 @@ Traceback (most recent call last):
   File "/home/aaron/microblog/app/main/routes.py", line 142, in send_message
     user.add_notification('unread_message_count', user.new_messages())
 AttributeError: 'User' object has no attribute 'add_notification'
-2019-01-08 14:48:54,198 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 14:51:53,522 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
+2019-01-08 16:29:01,390 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 09:09:21,221 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 09:14:01,064 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 09:17:32,387 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 09:18:28,035 ERROR: Exception on /api/users [GET] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aaron/microblog/app/api/users.py", line 13, in get_users
+    page = request.args.get('page', 1, type=int)
+NameError: name 'request' is not defined
+2019-01-09 09:27:01,233 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 09:54:49,641 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 09:55:02,589 ERROR: Exception on /api/users [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aaron/microblog/app/api/users.py", line 38, in create_user
+    data = request.get_json() or {}
+NameError: name 'request' is not defined
+2019-01-09 10:22:02,467 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 10:23:03,205 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 10:23:42,246 ERROR: Exception on /api/users/2 [PUT] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aaron/microblog/app/api/users.py", line 57, in update_user
+    data = request.get_json() or {}
+NameError: name 'request' is not defined
+2019-01-09 10:43:32,053 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 10:43:43,751 ERROR: Exception on /api/users [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aaron/microblog/app/api/users.py", line 38, in create_user
+    data = request.get_json() or {}
+NameError: name 'request' is not defined
+2019-01-09 10:47:35,491 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 11:06:04,023 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 11:07:00,870 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 11:07:07,314 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 14:15:34,621 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 14:17:23,241 ERROR: Exception on /api/tokens [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_httpauth.py", line 104, in decorated
+    return f(*args, **kwargs)
+  File "/home/aaron/microblog/app/api/tokens.py", line 9, in get_token
+    token = g.current_user.get_token()
+  File "/home/aaron/microblog/app/models.py", line 160, in get_token
+    dn.session.add(self)
+NameError: name 'dn' is not defined
+2019-01-09 14:34:34,299 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 14:35:51,266 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]

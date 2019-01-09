@@ -1,4 +1,4 @@
-2019-01-08 14:49:06,925 ERROR: Exception on /send_message/susan [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2019-01-09 14:38:26,397 ERROR: Exception on /api/tokens [POST] [in /home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +12,13 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/aaron/microblog/app/main/routes.py", line 142, in send_message
-    user.add_notification('unread_message_count', user.new_messages())
-AttributeError: 'User' object has no attribute 'add_notification'
-2019-01-08 14:51:53,522 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:74]
-2019-01-08 16:29:01,390 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+  File "/home/aaron/microblog/venv/lib/python3.6/site-packages/flask_httpauth.py", line 104, in decorated
+    return f(*args, **kwargs)
+  File "/home/aaron/microblog/app/api/tokens.py", line 9, in get_token
+    token = g.current_user.get_token()
+  File "/home/aaron/microblog/app/models.py", line 160, in get_token
+    dn.session.add(self)
+NameError: name 'dn' is not defined
+2019-01-09 14:39:09,615 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 14:43:29,783 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
+2019-01-09 15:09:15,911 INFO: Microblog startup [in /home/aaron/microblog/app/__init__.py:78]
